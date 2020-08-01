@@ -53,34 +53,30 @@ ga('send', 'pageview');
     </a>
     <!-- End Logo -->
 
-		<!-- Begin Name added -->
-		<div class="container">
-        <a class="navbar-brand" href="{{ site.baseurl }}/index.html"><b>{{site.name}}</b></a>
-    </div>
-		<!-- End name added -->
-
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarMediumish">
 
-        <!-- Begin Menu DELETED THE OBJECTS -->
+        <!-- Begin Menu -->
 
             <ul class="navbar-nav ml-auto">
 
                 {% if page.url == "/" %}
                 <li class="nav-item active">
                 {% else %}
-
-								<li class="nav-item">
-								{% endif %}
-                <a class="nav-link" href="{{ site.baseurl }}/index.html">Writing</a>
+                <li class="nav-item">
+                {% endif %}
+                <a class="nav-link" href="{{ site.baseurl }}/index.html">Blog</a>
                 </li>
-
 
                 <li class="nav-item">
                 <a class="nav-link" href="{{ site.baseurl }}/about">About</a>
+                </li>
+
+                <li class="nav-item">
+                <a target="_blank" class="nav-link" href="https://bootstrapstarter.com/bootstrap-templates/template-mediumish-bootstrap-jekyll/"> Docs</a>
                 </li>
 
                 {% include search-lunr.html %}
@@ -100,9 +96,14 @@ ga('send', 'pageview');
 
 <div class="container">
 
-<!-- Site Title deleted
+<!-- Site Title
 ================================================== -->
-
+<div class="mainheading">
+    <h1 class="sitetitle">{{ site.name }}</h1>
+    <p class="lead">
+        {{ site.description }}
+    </p>
+</div>
 
 <!-- Content
 ================================================== -->
@@ -110,12 +111,12 @@ ga('send', 'pageview');
     {{ content }}
 </div>
 
-<!--{% if site.mailchimp-list %}
- Bottom Alert Bar
-==================================================
+{% if site.mailchimp-list %}
+<!-- Bottom Alert Bar
+================================================== -->
 <div class="alertbar">
 	<div class="container text-center">
-		<span><img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{site.title}}"> &nbsp; Never miss a <b>story</b> from us, subscribe to our newsletter</span>
+		<span><img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{site.title}}"> &nbsp; Never miss a <b>vedanta story</b> from us, subscribe to our newsletter</span>
         <form action="{{site.mailchimp-list}}" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
             <div class="mc-field-group">
             <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
@@ -124,7 +125,7 @@ ga('send', 'pageview');
         </form>
 	</div>
 </div>
-{% endif %}-->
+{% endif %}
 
 </div>
 
@@ -134,7 +135,7 @@ ga('send', 'pageview');
 	<div class="d-md-flex h-100">
 		<div class="col-md-4 transpdark align-self-center text-center h-100">
             <div class="d-md-flex align-items-center justify-content-center h-100">
-                <h3 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h3>
+                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
             </div>
 		</div>
 		<div class="col-md-8 p-5 align-self-center text-center">
@@ -158,25 +159,12 @@ ga('send', 'pageview');
 <footer class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 col-sm-12 text-center text-lg-center">
-                <h6>Copyright © {{ site.time | date: "%Y" }} {{ site.name }}</h6>
-								<p>Jekyll site adapted from Mediumish Jekyll theme
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                Copyright © {{ site.time | date: "%Y" }} {{ site.name }}
             </div>
-						<!-- Added social media links
-						==================================================
-						{%- if site.footer_links -%}
-						    <div class="social-icons">
-						      {%- for footer_link in site.footer_links -%}
-						        {%- if footer_link.url contains "://" -%}
-						          {%- assign url = footer_link.url -%}
-						        {%- else -%}
-						          {%- assign url = footer_link.url | relative_url -%}
-						        {%- endif -%}
-						        <a class="social-icon" href="{{ url }}"><i class="{{ footer_link.icon | default: 'fas fa-link' }} fa-2x" title="{{ footer_link.title }}"></i></a>
-						      {%- endfor -%}
-						    </div>
-						  {%- endif -%}-->
-
+            <div class="col-md-6 col-sm-6 text-center text-lg-right">
+                <a target="_blank" href="https://www.wowthemes.net/mediumish-free-jekyll-template/">Mediumish Jekyll Theme</a> by WowThemes.net
+            </div>
         </div>
     </div>
 </footer>
